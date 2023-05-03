@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:auth_management/auth_management.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 {{#isSerializable}}import 'package:json_annotation/json_annotation.dart';
