@@ -1,6 +1,6 @@
 import 'package:auth_management/auth_management.dart';
-{{#isSerializable}}
-import 'package:json_annotation/json_annotation.dart';
+{{#isSerializable}}import 'package:json_annotation/json_annotation.dart';
+
 
 part '{{name.snakeCase()}}.g.dart';
 
