@@ -1,0 +1,3 @@
+class AuthService extends BaseAuthService {
+    
+}

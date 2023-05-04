@@ -13,3 +13,8 @@ bricks:
   #     path: bricks/widget
   base_user_model:
     path: base_user_model
+
+  auth_service:
+    path: auth_service
+
+
