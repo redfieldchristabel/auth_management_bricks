@@ -2,12 +2,13 @@ import 'dart:convert';
 
 import 'package:auth_management/auth_management.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:isar/isar.dart';
 {{#isSerializable}}import 'package:json_annotation/json_annotation.dart';
 
 part '{{name.snakeCase()}}.g.dart';
 
-@JsonSerializable()
-{{/isSerializable}}
+@JsonSerializable(){{/isSerializable}}
+@collection
 class {{name.pascalCase()}} extends BaseUser{
 
   {{name.pascalCase()}}(
