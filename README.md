@@ -6,4 +6,4 @@ Steps to use:
 1. make sure mason package have been added to the flutter project
 2. mason init in terminal
 3. make sure that mason.yaml file has been added
-4. use mason make to use brick 
+4. use mason make command to use brick 
