@@ -25,7 +25,4 @@ environment:
 #  * an optional prompt phrase used when asking for the variable
 #  * a list of values (enums only)
 vars:
-  user_model:
-    type: string
-    description: User's Model name thant extended the BaseUser class
-    prompt: What is user model name?
+
