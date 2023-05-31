@@ -17,4 +17,12 @@ bricks:
   auth_service:
     path: auth_service
 
+  auth_route_service:
+    path: auth_route_service
+
+  route:
+    path: route
+
+  
+
 
