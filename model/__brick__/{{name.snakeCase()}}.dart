@@ -7,7 +7,7 @@ part '{{name.snakeCase()}}.g.dart';
 @JsonSerializable(){{/isSerializable}}
 class {{name.pascalCase()}} {
 
-  {{name.pascalCase()}}()
+  {{name.pascalCase()}}();
 
   {{#isSerializable}}
   /// A necessary factory constructor for creating a new User instance
