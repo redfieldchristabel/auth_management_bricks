@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 {{#isSerializable}}import 'package:json_annotation/json_annotation.dart';
 
 part '{{name.snakeCase()}}.g.dart';
 
 @JsonSerializable(){{/isSerializable}}
-@collection
 class {{name.pascalCase()}} {
+
+  {{name.pascalCase()}}()
 
   {{#isSerializable}}
   /// A necessary factory constructor for creating a new User instance
