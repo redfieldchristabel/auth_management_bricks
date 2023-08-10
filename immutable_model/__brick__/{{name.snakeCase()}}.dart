@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:built_value/built_value.dart';
 {{#isSerializable}}import 'package:built_value/serializer.dart';
 import 'package:tiktwin/models/serializers.dart';{{/isSerializable}}
