@@ -20,6 +20,9 @@ bricks:
   auth_route_service:
     path: auth_route_service
 
+  immutable_model:
+    path: immutable_model
+
   route:
     path: route
 
