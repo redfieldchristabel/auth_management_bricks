@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:tiktwin/models/product/create_product_variation_body.dart';
-import 'package:built_value/serializer.dart';
-import 'package:tiktwin/models/serializers.dart';
+{{#isSerializable}}import 'package:built_value/serializer.dart';
+import 'package:tiktwin/models/serializers.dart';{{/isSerializable}}
 
 part '{{name.snakeCase()}}.g.dart';
 
@@ -19,6 +19,7 @@ class {{name.pascalCase()}} implements Built<{{name.pascalCase()}}, {{name.pasca
   factory {{name.pascalCase()}}([void Function({{name.pascalCase()}}Builder) updates]) =
   _${{name.pascalCase()}};
 
+  {{#isSerializable}}
   static Serializer<{{name.pascalCase()}}> get serializer =>
   _$createProductBodySerializer;
 
@@ -28,10 +29,10 @@ class {{name.pascalCase()}} implements Built<{{name.pascalCase()}}, {{name.pasca
   Map<String, dynamic> toJson() => serializers.serialize(this) as Map<String, dynamic>;
 
   String toJsonRaw() {
-  final Map<String, dynamic> json = toJson();
-  return jsonEncode(json);
+    final Map<String, dynamic> json = toJson();
+    return jsonEncode(json);
   }
 
   factory {{name.pascalCase()}}.fromJsonRaw(String source) =>
-  {{name.pascalCase()}}.fromJson(jsonDecode(source));
+  {{name.pascalCase()}}.fromJson(jsonDecode(source));{{/isSerializable}}
 }
