@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
-import 'package:tiktwin/models/product/create_product_variation_body.dart';
 {{#isSerializable}}import 'package:built_value/serializer.dart';
 import 'package:tiktwin/models/serializers.dart';{{/isSerializable}}
 
@@ -11,27 +10,35 @@ part '{{name.snakeCase()}}.g.dart';
 abstract
 class {{name.pascalCase()}} implements Built<{{name.pascalCase()}}, {{name.pascalCase()}}Builder> {
 
-  {{name.pascalCase()}}._();
+  const {{name.pascalCase()}}._();
 
   static void _initializeBuilder({{name.pascalCase()}}Builder builder) =>
   builder;
 
-  factory {{name.pascalCase()}}([void Function({{name.pascalCase()}}Builder) updates]) =
+  const factory {{name.pascalCase()}}([void Function({{name.pascalCase()}}Builder) updates]) =
   _${{name.pascalCase()}};
 
   {{#isSerializable}}
   static Serializer<{{name.pascalCase()}}> get serializer =>
   _$createProductBodySerializer;
 
-  factory {{name.pascalCase()}}.fromJson(Map<String, dynamic> json) =>
-  _${{name.pascalCase()}}FromJson(json);
+  /// `toJson` is the convention for a class to declare support for serialization
+  /// to JSON. The implementation simply calls the private, generated
+  /// helper method
+  factory {{name.pascalCase()}}.fromJson(Map<String, dynamic> json) {
+    {{name.pascalCase()}}? object = serializers.deserializeWith(serializer, json);
+    if (object == null) {
+      throw Exception("object is null");
+    }
+    return object;
+  }
 
+  /// `toJson` is the convention for a class to declare support for serialization
+  /// to JSON. The implementation simply calls the private, generated
+  /// helper method
   Map<String, dynamic> toJson() => serializers.serialize(this) as Map<String, dynamic>;
 
-  String toJsonRaw() {
-    final Map<String, dynamic> json = toJson();
-    return jsonEncode(json);
-  }
+  String toJsonRaw() => jsonEncode(toJson());
 
   factory {{name.pascalCase()}}.fromJsonRaw(String source) =>
   {{name.pascalCase()}}.fromJson(jsonDecode(source));{{/isSerializable}}
