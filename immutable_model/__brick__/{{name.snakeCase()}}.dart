@@ -16,7 +16,7 @@ class {{name.pascalCase()}} implements Built<{{name.pascalCase()}}, {{name.pasca
   static void _initializeBuilder({{name.pascalCase()}}Builder builder) =>
   builder;
 
-  const factory {{name.pascalCase()}}([void Function({{name.pascalCase()}}Builder) updates]) =
+  factory {{name.pascalCase()}}([void Function({{name.pascalCase()}}Builder) updates]) =
   _${{name.pascalCase()}};
 
   {{#isSerializable}}
