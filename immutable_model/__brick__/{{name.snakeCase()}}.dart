@@ -37,7 +37,8 @@ class {{name.pascalCase()}} implements Built<{{name.pascalCase()}}, {{name.pasca
   /// `toJson` is the convention for a class to declare support for serialization
   /// to JSON. The implementation simply calls the private, generated
   /// helper method
-  Map<String, dynamic> toJson() => serializers.serialize(this) as Map<String, dynamic>;
+  Map<String, dynamic> toJson() => serializers.serialize(this,
+      specifiedType: const FullType({{name.pascalCase()}})) as Map<String, dynamic>;
 
   String toJsonRaw() => jsonEncode(toJson());
 
