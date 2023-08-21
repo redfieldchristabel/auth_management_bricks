@@ -21,7 +21,7 @@ class {{name.pascalCase()}} implements Built<{{name.pascalCase()}}, {{name.pasca
 
   {{#isSerializable}}
   static Serializer<{{name.pascalCase()}}> get serializer =>
-  _${{name.pascalCase()}}Serializer;
+  _${{name.camelCase()}}Serializer;
 
   /// `toJson` is the convention for a class to declare support for serialization
   /// to JSON. The implementation simply calls the private, generated
