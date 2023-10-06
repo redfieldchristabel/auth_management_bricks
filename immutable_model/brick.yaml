@@ -32,6 +32,12 @@ vars:
     default: User
     prompt: What is model name?
 
+  fileName:
+    type: string
+    description: Model file name
+    default: user
+    prompt: What is model file name?
+
 
   isSerializable:
     type: boolean
