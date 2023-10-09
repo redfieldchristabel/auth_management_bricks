@@ -2,7 +2,7 @@ import 'dart:convert';
 
 {{#isSerializable}}import 'package:json_annotation/json_annotation.dart';
 
-part '{{name.snakeCase()}}.g.dart';
+part '{{fileName.snakeCase()}}.g.dart';
 
 @JsonSerializable(){{/isSerializable}}
 class {{name.pascalCase()}} {
